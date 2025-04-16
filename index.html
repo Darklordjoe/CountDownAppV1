@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon (optional, but nice for professionalism) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏱️</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <h1>Countdown Timer</h1>
+
+        <!-- Input Section -->
+        <div class="input-section card">
+            <h2>Set Your Countdown</h2>
+            <div class="date-inputs">
+                <div class="date-input">
+                    <label for="start-date">Start Date & Time:</label>
+                    <input type="datetime-local" id="start-date" required>
+                    <button id="start-today" class="today-btn">Now</button>
+                </div>
+                <div class="date-input">
+                    <label for="end-date">End Date & Time:</label>
+                    <input type="datetime-local" id="end-date" required>
+                    <button id="end-today" class="today-btn">Now</button>
+                </div>
+            </div>
+            <div class="control-buttons initial-controls">
+                 <button id="calculate" class="action-btn">Calculate Duration</button>
+            </div>
+        </div>
+
+        <!-- Initial Duration Display (Shown after calculation) -->
+        <div id="initial-duration" class="duration-display initial-display card">
+            <h2>Total Countdown Duration</h2>
+            <div class="duration-grid">
+                <div><span id="initial-months">0</span> Months</div>
+                <div><span id="initial-weeks">0</span> Weeks</div>
+                <div><span id="initial-days">0</span> Days</div>
+                <div><span id="initial-hours">0</span> Hours</div>
+                <div><span id="initial-minutes">0</span> Minutes</div>
+                <div><span id="initial-seconds">0</span> Seconds</div>
+            </div>
+             <div class="control-buttons timer-controls">
+                 <button id="start-timer" class="action-btn start-btn" disabled>Start Countdown</button>
+             </div>
+        </div>
+
+        <!-- Live Countdown Display Section -->
+        <div id="countdown-display" class="live-display card">
+             <div class="control-buttons timer-controls live-controls">
+                 <button id="complete-timer" class="action-btn complete-btn" disabled>Completed</button>
+                 <button id="reset-timer" class="action-btn reset-btn">Reset</button>
+             </div>
+
+            <!-- Center Section: Remaining Time (Large Format) -->
+            <div class="display-box remaining-time-center">
+                <h2>Time Remaining</h2>
+                <div class="large-timer">
+                    <span id="remaining-days-lg">00</span><small>d</small> :
+                    <span id="remaining-hours-lg">00</span><small>h</small> :
+                    <span id="remaining-minutes-lg">00</span><small>m</small> :
+                    <span id="remaining-seconds-lg">00</span><small>s</small>
+                </div>
+                 <p id="countdown-message" class="status-message"></p>
+            </div>
+
+            <div class="live-details-grid">
+                <!-- Top Section: Elapsed Time -->
+                <div class="display-box elapsed-time">
+                    <h2>Time Elapsed</h2>
+                    <p><span id="elapsed-months">0</span> Months</p>
+                    <p><span id="elapsed-weeks">0</span> Weeks</p>
+                    <p><span id="elapsed-days">0</span> Days</p>
+                    <p class="time-breakdown">
+                        <span id="elapsed-hours">00</span>h :
+                        <span id="elapsed-minutes">00</span>m :
+                        <span id="elapsed-seconds">00</span>s
+                    </p>
+                </div>
+
+                <!-- Bottom Section: Remaining Time (Detailed Breakdown) -->
+                 <div class="display-box remaining-time-detailed">
+                     <h2>Remaining Breakdown</h2>
+                     <p><span id="remaining-months">0</span> Months</p>
+                     <p><span id="remaining-weeks">0</span> Weeks</p>
+                     <p><span id="remaining-days">0</span> Days</p>
+                     <p class="time-breakdown">
+                        <span id="remaining-hours">00</span>h :
+                        <span id="remaining-minutes">00</span>m :
+                        <span id="remaining-seconds">00</span>s
+                     </p>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
